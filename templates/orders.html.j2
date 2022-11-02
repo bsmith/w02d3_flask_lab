@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Today's Orders</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Bungee">
-</head>
-<body>
-    <header>
+{% extends "base.html.j2" %}
+{% block title %}Today's Orders{% endblock %}
+{% block header -%}
         <h1>Today's Orders</h1>
         <h2>{{ today }}</h2>
-    </header>
+{%- endblock %}
 
-    <main>
+{% block main -%}
         <div class="order-list">
             {% for order in orders %}
             <div class="order">
@@ -30,11 +20,4 @@
             </div>
             {% endfor %}
         </div>
-
-        <div class="credits">
-            <a href="https://www.freepik.com/free-vector/cooking-collection-background-fast-food_26935536.htm#query=pizza&position=47&from_view=keyword">Image by nuraghies</a> on Freepik
-        </div>
-    </main>
-
-</body>
-</html>
+{%- endblock %}

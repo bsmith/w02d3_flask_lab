@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Template Inheritance Pattern https://flask.palletsprojects.com/en/2.2.x/patterns/templateinheritance/ -->
+<html lang="en">
+<head>
+    {% block head -%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CodeClan Pizzeria{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bungee">
+    {%- endblock %}
+</head>
+<body>
+    <header>
+        {% block header -%}
+        <h1>CodeClan Pizzeria</h1>
+        {%- endblock %}
+    </header>
+
+    <main>
+        {% block main -%}
+        <p>Welcome!</p>
+        {%- endblock %}
+
+        <div class="credits">
+            <a href="https://www.freepik.com/free-vector/cooking-collection-background-fast-food_26935536.htm#query=pizza&position=47&from_view=keyword">Image by nuraghies</a> on Freepik
+        </div>
+    </main>
+</body>
+</html>
