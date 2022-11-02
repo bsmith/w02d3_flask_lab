@@ -12,6 +12,7 @@
 <body>
     <header>
         <h1>Today's Orders</h1>
+        <h2>{{ today }}</h2>
     </header>
 
     <main>
@@ -20,7 +21,8 @@
             <div class="order">
                 <p>
                     {# <a href="/orders/{{orders.index(order)}}">{{ order.format_order_date_as_string() }}</a><br> #}
-                    <a href="{{ url_for("orders_view_one", index=orders.index(order)) }}">{{ order.format_order_date_as_string() }}</a><br>
+                    {# <a href="{{ url_for("orders_view_one", index=orders.index(order)) }}">{{ order.format_order_date_as_string() }}</a><br> #}
+                    <a href="{{ url_for("orders_view_one", index=loop.index-1) }}">{{ order.format_order_date_as_string() }}</a><br>
                     {{ order.food_topping }}<br>
                     {{ order.quantity }} x Pizzas<br>
                     {{ order.customer_name }}

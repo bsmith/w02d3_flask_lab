@@ -12,8 +12,11 @@ header {
     text-align: center;
 }
 
-h1 {
+header > h1 {
     margin: 0;
+}
+header > h2 {
+    font-size: 1rem;
 }
 
 .order-list {

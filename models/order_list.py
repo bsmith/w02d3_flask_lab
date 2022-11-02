@@ -1,17 +1,20 @@
 from models.order import Order
-import datetime
+from datetime import datetime, date, time
 
-order1 = Order("Mar",
-    datetime.datetime(2022, 11, 2, 12, 5, 0),
-    2, "pepperoni")
-order2 = Order("Colette", 
-    datetime.datetime(2022, 11, 2, 12, 12, 30),
-     5, "hawaiian")
-orders = [order1, order2]
+orders = []
 
+orders.append(Order("Mar",
+    datetime.combine(date.today(), time(12, 5, 0)),
+    2, "pepperoni"))
+orders.append(Order("Colette", 
+    datetime.combine(date.today(), time(12, 12, 30)),
+     5, "hawaiian"))
+orders.append(Order("Keith", 
+    datetime.combine(date.today(), time(12, 12, 30)),
+     1, "margherita"))
 
 for x in [1, 2, 3]:
     orders.append(
-        Order("James", datetime.datetime(2022, 11, 2, 12, 12, 30),
+        Order("James", datetime(2022, 11, 2, 12, 12, 30),
             10, "four cheese"))
     
