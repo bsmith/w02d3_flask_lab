@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: dodgerblue;
+    color: white;
+    font-size: 4rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.single-order {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.order {
+    background-color: darkblue;
+    color: white;
+    margin: 1rem;
+    padding: 0 2rem;
+}
+
+.order a {
+    color: white;
+}

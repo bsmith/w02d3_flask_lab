@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Today's Orders</h1>
+    <header>
+        <h1>Today's Orders</h1>
+    </header>
 
-    {% for order in orders %}
-    <div>
-        <p>
-            <a href="/orders/{{orders.index(order)}}">{{ order.format_order_date_as_string() }}</a><br>
-            {{ order.food_topping }}<br>
-            {{ order.quantity }}<br>
-            {{ order.customer_name }}
-        </p>
+    <div class="order-list">
+        {% for order in orders %}
+        <div class="order">
+            <p>
+                <a href="/orders/{{orders.index(order)}}">{{ order.format_order_date_as_string() }}</a><br>
+                {{ order.food_topping }}<br>
+                {{ order.quantity }}<br>
+                {{ order.customer_name }}
+            </p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
 </body>
 </html>

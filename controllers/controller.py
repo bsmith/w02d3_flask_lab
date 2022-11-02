@@ -8,4 +8,4 @@ def orders():
 
 @app.route('/orders/<index>')
 def orders_view_one(index):
-    return render_template('order.html', order=order_list.orders[int(index)])
+    return render_template('order.html', order=order_list.orders[int(index)], index=int(index))
