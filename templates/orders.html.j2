@@ -12,7 +12,7 @@
     {% for order in orders %}
     <div>
         <p>
-            {{ order.format_order_date_as_string() }}<br>
+            <a href="/orders/{{orders.index(order)}}">{{ order.format_order_date_as_string() }}</a><br>
             {{ order.food_topping }}<br>
             {{ order.quantity }}<br>
             {{ order.customer_name }}
