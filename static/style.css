@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    background-color: rgb(242, 237, 230);
+    font-family: Bungee, sans-serif;
 }
 
 header {
@@ -23,7 +25,9 @@ h1 {
 
 .single-order {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
     font-size: 2rem;
 }
@@ -33,8 +37,29 @@ h1 {
     color: white;
     margin: 1rem;
     padding: 0 2rem;
+    text-align: center;
+    border-radius: 2.5rem;
 }
 
 .order a {
     color: white;
+}
+
+main {
+    background-image: url(/static/images/background.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background: no-repeat center/100% url(/static/images/background.png); */
+    min-height: 60vw;
+    /* block-size: fit-content; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 1015px) {
+    main {
+        background-image: none;
+    }
 }

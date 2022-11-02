@@ -6,21 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Order</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bungee">
 </head>
 <body>
     <header>
         <h1>Order #{{ index+1 }}</h1>
     </header>
 
-    <div class="single-order">
-        <div class="order">
-            <p>
-                {{ order.format_order_date_as_string() }}<br>
-                {{ order.food_topping }}<br>
-                {{ order.quantity }}<br>
-                {{ order.customer_name }}
-            </p>
+    <main>
+        <div class="single-order">
+            <div class="order">
+                <p>
+                    {{ order.format_order_date_as_string() }}<br>
+                    {{ order.food_topping }}<br>
+                    {{ order.quantity }} x Pizzas<br>
+                    {{ order.customer_name }}
+                </p>
+            </div>
+            
+                    <div class="order-list-button">
+                        <a href="{{url_for('orders')}}">Back to order list</a>
+                    </div>
         </div>
-    </div>
+
+        <div class="credits">
+            <a href="https://www.freepik.com/free-vector/cooking-collection-background-fast-food_26935536.htm#query=pizza&position=47&from_view=keyword">Image by nuraghies</a> on Freepik
+        </div>
+    </main>
 </body>
 </html>
