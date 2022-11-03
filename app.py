@@ -5,6 +5,11 @@ from controllers.orders import orders
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(orders)
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return """<img src="https://http.cat/404.jpg">"""
+
     return app
 
 if __name__ == "__main__":
